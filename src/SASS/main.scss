@@ -1,2 +1,23 @@
-@import "./layout/header.scss";
-@import "./layout/hero.scss";
+// base
+@import "./utils/variables";
+@import "./base/reset";
+@import "./base/container";
+@import "./base/common";
+
+// main
+@import "./layout/main/header";
+@import "./layout/main/hero";
+@import "./layout/main/main-characters";
+@import "./layout/main/slider";
+@import "./layout/main/footer";
+
+// characters
+@import "./layout/seconds/second-header"; // second header
+@import "./layout/characters/characters-hero";
+@import "./layout/characters/characters-filter";
+@import "./layout/seconds/second-footer";// second footer
+
+// episods
+@import "./layout/episods/episods-hero";
+@import "./layout/episods/episods-filter";
+
