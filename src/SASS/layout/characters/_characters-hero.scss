@@ -1,0 +1,59 @@
+
+
+.characters_hero {
+  margin-bottom: 104px;
+  padding-bottom: 80px;
+  background-color: #0D171D;
+  border-radius: 0 0 70px 70px;  
+  &_img_box {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 25px;
+    background-color: #A1D737;
+  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+    
+  // }
+}
+
+// set ff for body and then delete all font-family: "Montserrat", sans-serif; 
+
+.characters {
+  &_h1{
+    margin-bottom: 14px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    text-align: left;
+    color: #fafafa;    
+  }
+  &-paragraph {
+    margin-bottom: 24px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    color: #fafafa;    
+  }
+  &_return_button {
+    padding: 10px 20px;  
+    margin-bottom: 40px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 133%;
+    color: #fafafa;   
+
+    background-color: transparent;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 1000px;  
+  }
+}

@@ -1,0 +1,36 @@
+.second-footer {
+  padding-top: 40px;
+  padding-bottom: 110px;
+  background-color: #0D171D;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.rick_and_morty_footer-img {
+  width: 149px;
+  height: 107px;
+}
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.massangers-wrapper {
+  display: flex;
+  gap: 12px;
+}
+.links-wrapper-item a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.01em;
+  color: #fafafa;
+}
+.links-wrapper-first-item-margin {
+  margin-bottom: 8px;
+}
+.links-box {
+  margin-bottom: 20px;
+}

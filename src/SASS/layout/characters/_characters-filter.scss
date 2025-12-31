@@ -1,0 +1,132 @@
+.filter-characters {
+  padding-bottom  : 80px;
+}
+
+.characters-filter {
+  &_input {
+    border: none;
+    background-color: transparent;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    color: #111;
+  }
+  &-label {
+    padding-bottom: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    color: #111;
+  }
+}
+
+.search-wrapper {
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  &-for-loop {
+    padding: 14px 24px;
+    border: 1.5px solid #111;
+    border-radius: 100px;
+    background-color: #daf836;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.filters {
+  margin-bottom: 40px;
+
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+// base field
+.field {
+  height: 56px;
+  width: 100%;
+  border: 1.5px solid #111;
+  border-radius: 100px;
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+}
+
+.field:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+// select
+.select-wrapper {
+  padding-top: 8px;
+  position: relative;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 52px;
+}
+
+.arrow {
+  position: absolute;
+  right: 18px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.label {
+  &-status,
+  &-species,
+  &-gender {
+    padding-bottom: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    color: #111;
+  }
+}
+
+// something went wrong
+
+.went-wrong {
+  &-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  &-paragraph {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 113%;
+    letter-spacing: 0.02em;
+    color: #111;
+  }
+}
