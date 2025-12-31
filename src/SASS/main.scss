@@ -1,23 +1,23 @@
 // base
-@import "./utils/variables";
-@import "./base/reset";
-@import "./base/container";
-@import "./base/common";
+@use "./utils/variables";
+@use "./base/reset";
+@use "./base/container";
+@use "./base/common";
 
 // main
-@import "./layout/main/header";
-@import "./layout/main/hero";
-@import "./layout/main/main-characters";
-@import "./layout/main/slider";
-@import "./layout/main/footer";
+@use "./layout/main/header";
+@use "./layout/main/hero";
+@use "./layout/main/main-characters";
+@use "./layout/main/slider";
+@use "./layout/main/footer";
 
 // characters
-@import "./layout/seconds/second-header"; // second header
-@import "./layout/characters/characters-hero";
-@import "./layout/characters/characters-filter";
-@import "./layout/seconds/second-footer";// second footer
+@use "./layout/seconds/second-header"; // second header
+@use "./layout/characters/characters-hero";
+@use "./layout/characters/characters-filter";
+@use "./layout/seconds/second-footer";// second footer
 
 // episods
-@import "./layout/episods/episods-hero";
-@import "./layout/episods/episods-filter";
+@use "./layout/episods/episods-hero";
+@use "./layout/episods/episods-filter";
 
