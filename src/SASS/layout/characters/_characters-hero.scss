@@ -13,7 +13,10 @@
     @media screen and (min-width: 768px) { 
       display: flex;  
       align-items: center;
-      justify-content: space-between  ;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 768px) { 
+      justify-content: space-around;
     }
   }
   &_img_box {
@@ -48,6 +51,9 @@
       font-size: 60px;
       line-height: 100%; 
     }    
+    @media screen and (min-width: 1200px) { 
+      font-size: 74px;
+    }  
   }
   &-paragraph {
     margin-bottom: 24px;
@@ -63,6 +69,10 @@
       font-size: 16px;
       line-height: 113%;
     }   
+    @media screen and (min-width: 1200px) { 
+      line-height: 125%;  
+      width: 482px;
+    }    
   }
   &_return_button {
     padding: 10px 20px;  
