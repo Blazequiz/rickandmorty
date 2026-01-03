@@ -1,21 +1,34 @@
 <section class="filter-episodes">
   <div class="container">
     <form class="filter-episodes_form">
-      <label class="filter-episodes_label">Name</label>
-      <div class="filter-episodes_constraction_div_for_loop_svg">
-      <input type="text" class="filter-episodes_name_input" placeholder="Enter name"/>
-      <img src="../../img/search.svg" alt="search" width="18" height="18" class="filter-episodes_search-img">
-      </div>
-      <label class="filter-episodes_label">Episode code</label>
-      <div class="filter-episodes_select-wrapper">
+      <label class="filter-episodes_label"
+        >Name
+
+        <input
+          type="text"
+          class="filter-episodes_name_input"
+          placeholder="Enter name"
+        />
+        <img
+          src="../../img/search.svg"
+          alt="search"
+          width="18"
+          height="18"
+          class="filter-episodes_search-img"
+        />
+      </label>
+
+      <label class="filter-episodes_label"
+        >Episode code
         <select class="filter-episodes_field">
           <option>#</option>
           <option>#</option>
           <option>#</option>
         </select>
-        <!-- <span class="arrow"><img src="../../img/dropdown_arrow.svg" alt="dropdown_arrow"></span> -->
-      </div>
-      <button class="filter-episodes_button">Load more</button>
+        <!-- <span class="arrow"><img src="../../img/dropdown_arrow.svg" alt="dropdown_arrow"></span>  додати марджин до форми-->
+      </label>
     </form>
+    <div class="filter-episodes_list"></div>
+    <button class="filter-episodes_button">Load more</button>
   </div>
 </section>

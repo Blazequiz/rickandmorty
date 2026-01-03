@@ -2,26 +2,27 @@
   &_form {
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 480px) {
+    gap: 20px;
+    @media screen and (min-width: 768px) {
       flex-direction: row;
+      justify-content: center;
     }
+  }
+  &_label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
   &_name_input {
     border: 1.5px solid #111;
     border-radius: 100px;
     padding: 14px 24px;
     width: 335px;
-    height: 46px;
     background-color: var(--light-green);
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 768px) {
       padding: 16px 24px;
       width: 233px;
-      height: 50px;
     }
-  }
-  &_constraction_div_for_loop_svg {
-    display: flex;
-    margin-bottom: 64px;
   }
   &_search-img {
     padding-top: 8px;

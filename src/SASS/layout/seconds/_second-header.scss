@@ -1,20 +1,5 @@
 .second_header{
-    height: 85px;
-    max-width: 479px;
     background-color: var(--black);
-    @media screen and (min-width: 480px) { 
-    height: 98px;
-    max-width: 767px;
-    }
-        @media screen and (min-width: 768px) { 
-    max-width: 1199px;
-    }
-
-       @media screen and (min-width: 768px) { 
-    max-width: 1440px;
-    }
-
-
     &_img{
         max-width: 120px;
         max-height: 45px;
@@ -25,9 +10,4 @@
         padding-top: 24px;
     }
     }
-    //     &_img:hover{
-    //     max-width: 120px;
-    //     max-height: 45px;
-    //     src: "../../img/episodes/text_logo_gl.png";
-    // }
 }
