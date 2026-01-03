@@ -1,0 +1,87 @@
+.hero-episodes {
+  height: 790px;
+  max-width: 479px;
+  background-color: var(--black);
+  border-radius: 0 0 60px 60px;
+  @media screen and (min-width: 480px) {
+    height: 768px;
+    max-width: 767px;
+    border-radius: 0 0 100px 100px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 1199px;
+    height: 802px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 1440px;
+  }
+
+  &_title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    color: var(--white);
+    margin-bottom: 14px;
+    @media screen and (min-width: 480px) {
+      font-size: 60px;
+      line-height: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 100px;
+    }
+  }
+  &_description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--white);
+    margin-bottom: 24px;
+    @media screen and (min-width: 480px) {
+      font-size: 16px;
+      line-height: 113%;
+      margin-bottom: 32px;
+    }
+    @media screen and (min-width: 768px) {
+      line-height: 125%;
+    }
+  }
+  &_button {
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    background-color: var(--black);
+    border-radius: 1000px;
+    padding: 12px 24px;
+    width: 131px;
+    height: 42px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 129%;
+    color: #fafafa;
+  }
+  &_construction_div {
+    max-width: 305px;
+    @media screen and (min-width: 480px) {
+      max-width: 482px;
+    }
+    @media screen and (min-width: 768px) {
+      max-width: 536px;
+    }
+  }
+}
+.construction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 62px;
+  @media screen and (min-width: 480px) {
+    gap: 52px;
+    padding-top: 140px;
+    flex-direction: row;
+  }
+  @media screen and (min-width: 768px) {
+    gap: 124px;
+    padding-top: 100px;
+  }
+}
