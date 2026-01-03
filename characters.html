@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins&display=swap" rel="stylesheet">    
     
-    <script type="module" crossorigin src="/Vite_vanilla-app-template/assets/main-2d1bac6d.js"></script>
-    <link rel="stylesheet" href="/Vite_vanilla-app-template/assets/main-1ecfba68.css">
+    <script type="module" crossorigin src="/Vite_vanilla-app-template/assets/main-7af17225.js"></script>
+    <link rel="stylesheet" href="/Vite_vanilla-app-template/assets/main-56f20ea2.css">
   </head>
   <body>
     <!-- Loads the specified .html file --> 
@@ -21,16 +21,18 @@
     </div>
 </header>
     <section class="characters_hero">
-  <div class="container">
-    <h1 class="characters_h1">Characters</h1>
-    <p class="characters-paragraph">
-      Our character bios provide detailed information on every member of the
-      Smith family and beyond. Get to know these unforgettable characters on a
-      whole new level - start exploring now!
-    </p>
-    <button class="characters_return_button">
-      Back home
-    </button>
+  <div class="container characters_hero-flex">
+    <div class="hero-wrapper ">
+      <h1 class="characters_h1">Characters</h1>
+      <p class="characters-paragraph">
+        Our character bios provide detailed information on every member of the
+        Smith family and beyond. Get to know these unforgettable characters on a
+        whole new level - start exploring now!
+      </p>
+      <button class="characters_return_button">
+        Back home
+      </button>      
+    </div>
     <div class="characters_hero_img_box">
       <img src="../../img/rick_hero_mobile_version_1x.png" alt="rick">
     </div>
@@ -40,7 +42,9 @@
 
     <section class="filter-characters">
   <div class="container">
-    <!-- search input -->
+  <!-- select inputs -->
+<div class="filters">
+      <!-- search input -->
   <div class="search-wrapper">
     <label for="characters-filter" class="characters-filter-label">Name</label>
     <div class="search-wrapper-for-loop">
@@ -48,43 +52,41 @@
       <img src="../../img/search.svg" alt="search" width="18" height="18" class="search-wrapper-img">  
     </div>
   </div>
-  <!-- select inputs -->
-<div class="filters">
-    <!-- Status -->
+    <!-- status -->
     <div>
       <label class="label-status">Status</label>
       <div class="select-wrapper">
         <select class="field">
-          <option>Alive</option>
-          <option>Dead</option>
-          <option>Unknown</option>
+          <option class="field-option">Alive</option>
+          <option class="field-option">Dead</option>
+          <option class="field-option">Unknown</option>
         </select>
         <span class="arrow"><img src="../../img/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
     </div>
 
-    <!-- Species -->
+    <!-- species -->
     <div>
       <label class="label-species">Species</label>
       <div class="select-wrapper">
         <select class="field">
-          <option>Human</option>
-          <option>Alien</option>
-          <option>Robot</option>
+          <option class="field-option">Human</option>
+          <option class="field-option">Alien</option>
+          <option class="field-option">Robot</option>
         </select>
         <span class="arrow"><img src="../../img/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
     </div>
 
-    <!-- Gender -->
+    <!-- gender -->
     <div>
       <label class="label-gender">Gender</label>
       <div class="select-wrapper">
         <select class="field">
-          <option>All</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Unknown</option>
+          <option class="field-option">All</option>
+          <option class="field-option">Male</option>
+          <option class="field-option">Female</option>
+          <option class="field-option">Unknown</option>
         </select>
         <span class="arrow"><img src="../../img/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
@@ -102,7 +104,7 @@
       <div class="rick_and_morty_footer-img">
               <img src="../../img/rick_and_morty_footer.png" alt="rick_and_morty_footer" >
       </div>
-      <div class="links-wrapper">
+      <div class="second-footer-references-wrapper">
         <!--  -->
         <div class="links-box">
           <div class="links-wrapper-item links-wrapper-item-margin">
@@ -112,7 +114,7 @@
             <a href="#">Episodes</a>
           </div>      
         </div>
-
+        <!--   -->
         <div class="massangers-wrapper">
           <div class="massangers-wrapper-item"><img src="../../img/facebook.svg" alt="facebook"></div>
           <div class="massangers-wrapper-item"><img src="../../img/twitter.svg" alt="twitter"></div>
@@ -120,6 +122,8 @@
         </div>
       </div>
     </div>
+    <!-- policy -->
+     <p class="second-footer-policy">Privacy Policy Public Offering Agreement</p>
   </div>
 </footer>
 
