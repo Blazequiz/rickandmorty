@@ -24,20 +24,24 @@
   }
 }
 
+
 .search-wrapper {
   margin-bottom: 20px;
-
   display: flex;
   flex-direction: column;
   &-for-loop {
-    padding: 14px 24px;
+    padding: 16px 24px;
     border: 1.5px solid #111;
     border-radius: 100px;
     background-color: #daf836;
+    width: 287px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (min-width: 768px) { 
+
+    }
   }
   &-img {
     width: 18px;
@@ -46,28 +50,37 @@
 }
 
 .filters {
-  margin-bottom: 40px;
-
-  max-width: 520px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  @media screen and (min-width: 1200px) { 
+    justify-content: center;
+  }  
 }
 
-.full {
-  grid-column: 1 / -1;
-}
+// .full {
+//   grid-column: 1 / -1;
+// }
 
 // base field
-.field {
-  height: 56px;
-  width: 100%;
-  border: 1.5px solid #111;
-  border-radius: 100px;
-  padding: 0 20px;
-  font-size: 16px;
-  outline: none;
-  background: #fff;
+
+// .field {
+//   font-family: 'Montserrat', sans-serif;
+//   height: 56px;
+//   width: 162px;
+//   border: 1.5px solid #111;
+//   border-radius: 100px;
+//   padding: 0 20px;
+//   font-size: 16px;
+//   outline: none;
+//   background: #fff;
+//   @media screen and (min-width: 768px) { 
+//     height: 50px;
+//   }
+// }
+
+.field-option{
+  font-family: 'Montserrat', sans-serif;
 }
 
 .field:focus {
@@ -75,26 +88,36 @@
 }
 
 // select
-.select-wrapper {
-  padding-top: 8px;
-  position: relative;
-}
-
 select {
+  background-color: transparent;
+  border: none;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 113%;
+  color: #111;  
+
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
-  padding-right: 52px;
 }
 
-.arrow {
-  position: absolute;
-  right: 18px;
-  top: 55%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  pointer-events: none;
+.select-wrapper {
+  padding: 16px 18px;
+  width: 122px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Montserrat", sans-serif;
+  border: 1.5px solid #111;
+  border-radius: 100px;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
 }
 
 .label {
@@ -128,5 +151,9 @@ select {
     line-height: 113%;
     letter-spacing: 0.02em;
     color: #111;
+    @media screen and (min-width: 768px) { 
+      font-size: 20px;
+      line-height: 100%;
+    }
   }
 }
