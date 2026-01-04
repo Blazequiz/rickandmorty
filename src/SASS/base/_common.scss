@@ -1,3 +1,10 @@
 body {
   font-family: var(--font-family);
 }
+// remove outline 
+a.image-link:focus { outline: 0; }
+a:focus {outline : none;}
+
+select:focus {outline : none; border: none;}
+option:focus {outline : none; border: none;}
+
