@@ -6,7 +6,7 @@
   "homepage": "https://Blazequiz.github.io/rickandmorty/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Vite_vanilla-app-template/",
+    "build": "vite build --base=/rickandmorty/",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
