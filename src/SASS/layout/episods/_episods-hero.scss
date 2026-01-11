@@ -1,16 +1,16 @@
 .hero-episodes {
-  height: 790px;
-  max-width: 479px;
+  // height: 790px;
+  // max-width: 479px;
   background-color: var(--black);
   border-radius: 0 0 60px 60px;
   @media screen and (min-width: 768px) {
-    height: 768px;
-    max-width: 767px;
+    // height: 768px;
+    // max-width: 1440px;
     border-radius: 0 0 100px 100px;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1440px;
-    height: 802px;
+    // max-width: 1440px;
+    // height: 802px;
   }
 
   &_title {
@@ -74,14 +74,36 @@
   align-items: center;
   flex-direction: column;
   gap: 40px;
-  padding-top: 62px;
   @media screen and (min-width: 768px) {
     gap: 52px;
-    padding-top: 140px;
     flex-direction: row;
   }
   @media screen and (min-width: 1440px) {
     gap: 124px;
-    padding-top: 100px;
+  }
+}
+
+.slider {
+  text-align: center;
+  &_block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    border-radius: 25px;
+    width: 335px;
+    height: 335px;
+    overflow: hidden;
+    margin: auto;
+    background-color: var(--green);
+  }
+  &_line {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: transform ease 1s;
+  }
+  &_img{
+    width: 304px;
+    height: 324px;
   }
 }
