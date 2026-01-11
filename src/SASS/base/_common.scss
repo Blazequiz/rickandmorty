@@ -13,3 +13,8 @@ a:focus {outline : none;}
 
 select:focus {outline : none; border: none;}
 option:focus {outline : none; border: none;}
+input:focus {outline : none; border: none;}
+
+button {
+  cursor: pointer;
+}
