@@ -1,16 +1,13 @@
 .hero-episodes {
-  // height: 790px;
-  // max-width: 479px;
   background-color: var(--black);
   border-radius: 0 0 60px 60px;
+  padding-bottom: 80px;
   @media screen and (min-width: 768px) {
-    // height: 768px;
-    // max-width: 1440px;
+    padding-bottom: 208px;
     border-radius: 0 0 100px 100px;
   }
   @media screen and (min-width: 1440px) {
-    // max-width: 1440px;
-    // height: 802px;
+    padding-bottom: 126px;
   }
 
   &_title {
@@ -102,7 +99,7 @@
     left: 0;
     transition: transform ease 1s;
   }
-  &_img{
+  &_img {
     width: 304px;
     height: 324px;
   }
