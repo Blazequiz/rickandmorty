@@ -19,7 +19,6 @@
           <option class="field-option">Dead</option>
           <option class="field-option">Unknown</option>
         </select>
-        <span class="arrow"><img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
     </div>
 
@@ -32,7 +31,6 @@
           <option class="field-option">Alien</option>
           <option class="field-option">Robot</option>
         </select>
-        <span class="arrow"><img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
     </div>
 
@@ -46,7 +44,6 @@
           <option class="field-option">Female</option>
           <option class="field-option">Unknown</option>
         </select>
-        <span class="arrow"><img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </div>
     </div>
   </div>
@@ -56,5 +53,11 @@
     </div>
     <ul class="characters-list" id="charactersList">
     </ul>
+    <button class="getMoreCharactersBtn" id="getMoreCharactersBtn-js">load more</button>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border d-none" role="status" id="loadingSpinner">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   </div>
 </section>

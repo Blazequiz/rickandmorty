@@ -3,10 +3,13 @@ import { getCharacter } from "../services/getCharacters.js";
 const somethingWentWrongImg = document.querySelector("#loadWentWrong")
 const chactersNameInput = document.querySelector("#characters-filter")
 const charactersList = document.querySelector("#charactersList")
-
+const loadMoreBtn = document.querySelector("#getMoreCharactersBtn-js");
+const loadingSpinner = document.querySelector("#loadingSpinner")
+export const pageObj = { value: 1 };
+loadMoreBtn.style.display = 'none';
 // current window width
 
-function getLimitByScreen() {
+export function getLimitByScreen() {
   const width = window.innerWidth;
 
   if (width < 768) return 8;
@@ -14,11 +17,19 @@ function getLimitByScreen() {
   return 20;
 }
 
+
 async function onChangeGetCharacters(e) {
+  pageObj.value = 1;
+  loadingSpinner.classList.replace("d-none", "d-block");
+
   const value = chactersNameInput.value.trim(); //input
   const status = document.querySelector("#selectStatus").value;
-  const gender = document.querySelector("#selectGender").value;
+  let gender = document.querySelector("#selectGender").value;
   const species = document.querySelector("#selectSpecies").value;
+  if (gender === 'All') {
+    gender = '';
+  }
+  console.log(value, status,  gender, species);
   const limit = getLimitByScreen();
 
   console.log(limit);
@@ -26,24 +37,28 @@ async function onChangeGetCharacters(e) {
   somethingWentWrongImg.style.display = 'none';
   charactersList.innerHTML = ""
 
-  getCharacter(value, status, gender, species)
+  getCharacter(value, status, gender, species, pageObj.value)
   .then(data => {
     console.log(data)
     const first12Elements = data.results.slice(0, limit)
     console.log(first12Elements);
     renderCharacters(first12Elements)
+    loadMoreBtn.style.display = 'block';
+    loadingSpinner.classList.replace("d-block", "d-none");
   })
   .catch( error => {
     console.log(error)
-    somethingWentWrongImg.style.display = 'block';
+    somethingWentWrongImg.style.display = 'flex';
+    loadMoreBtn.style.display = 'none';
+    loadingSpinner.classList.replace("d-block", "d-none");
   })
 
-  chactersNameInput.value = ''; 
+  chactersNameInput.value = '';
 }
 
 // render function 
 
-function renderCharacters(characters) {
+export function renderCharacters(characters) {
   const markup = characters.map( character => {
     return `
       <li class="characters-list-item">
@@ -64,7 +79,6 @@ function renderCharacters(characters) {
       </li>    
     `
   }).join("")
-  console.log(markup);
   charactersList.insertAdjacentHTML("beforeend", markup)
 }
 
