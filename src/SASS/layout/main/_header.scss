@@ -1,0 +1,34 @@
+.header {
+  padding-top: 24px;
+  background-color: var(--black);
+  &-div-links {
+    display: flex;
+    padding-left: 20px;
+    @media screen and (min-width: 768px) {
+      padding-left: 32px;
+    };
+    @media screen and (min-width: 1200px) {
+      padding-left: 128px;
+    }
+    
+    &-link {
+      border-radius: 1000px;
+      padding: 12px 24px;
+      margin: 1px;
+      border: 1px solid rgba(250, 250, 250, 0.3);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 129%;
+    }
+    &-link:hover {
+      background-color: var(--green);
+      border: 1px solid var(--green);
+      color: #0d171d;
+    }
+  }
+}
