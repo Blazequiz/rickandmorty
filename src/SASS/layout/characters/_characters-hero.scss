@@ -13,10 +13,11 @@
     @media screen and (min-width: 768px) { 
       display: flex;  
       align-items: center;
-      justify-content: space-between;
+      gap: 60px;
     }
-    @media screen and (min-width: 768px) { 
+    @media screen and (min-width: 1200px) { 
       justify-content: space-around;
+      gap: 0;
     }
   }
   &_img_box {
