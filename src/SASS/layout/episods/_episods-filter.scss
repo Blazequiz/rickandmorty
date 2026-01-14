@@ -12,38 +12,76 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    // gap: 20px;
   }
   &_name_input {
     border: 1.5px solid #111;
     border-radius: 100px;
     padding: 14px 24px;
-    width: 335px;
     background-color: var(--light-green);
     @media screen and (min-width: 768px) {
-      padding: 16px 24px;
-      width: 233px;
+      padding: 16px 23px;
+    }
+  }
+
+  &_name_input::placeholder {
+    font-size: 14px;
+    line-height: 129%;
+    color: #111;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 113%;
     }
   }
   &_search-img {
-    padding-top: 8px;
-    position: relative;
+    position: absolute;
+    padding-top: 34px;
+    left: 292px;
+    @media screen and (min-width: 768px) {
+    padding-top: 36px;
+    left: 202px;
+    }
   }
-  &_select-wrapper {
-    padding-top: 8px;
-    position: relative;
+
+  &_arrow-img{
+    position: absolute;
+       padding-top: 34px;
+    left: 292px;
+    @media screen and (min-width: 768px) {
+    left: 156px;
+    }
   }
+  // &_select-wrapper {
+  //   padding-top: 8px;
+  //   position: relative;
+  // }
   &_field {
     border: 1.5px solid #111;
     border-radius: 100px;
     padding: 15px 24px;
-    width: 335px;
-    height: 48px;
+    transition: 0.4s;
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 768px) {
       padding: 16px 24px;
       width: 190px;
       height: 50px;
     }
+  }
+
+  &_field:focus {
+    border: 1.5px solid #848484;
+    transition: 0.4s;
+  }
+
+  &_option {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);
+  }
+  // not working
+  &_option:hover {
+    color: var(--green);
+    background-color: white;
   }
 
   &_button {
