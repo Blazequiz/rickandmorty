@@ -2,6 +2,7 @@ import { getCharacter } from "../services/getCharacters.js";
 import { getLimitByScreen } from "./loadCharacters.js";
 import { renderCharacters } from "./loadCharacters.js";
 import { pageObj } from "./loadCharacters.js";
+import { openModal } from "./modal.js";
 
 const loadMoreBtn = document.querySelector("#getMoreCharactersBtn-js");
 const loadingSpinner = document.querySelector("#loadingSpinner")
@@ -22,6 +23,7 @@ loadMoreBtn.addEventListener("click", async () => {
   if (gender === 'All') {
     gender = '';
   }
+  
   const limit = getLimitByScreen();
   pageObj.value += 1;
 
@@ -33,6 +35,7 @@ loadMoreBtn.addEventListener("click", async () => {
     renderCharacters(first12Elements) // the name of first12Elements will be renamed because the manage of elements depends on screen size
     loadingSpinner.classList.replace("d-block", "d-none");
     loadMoreBtn.style.display = 'block';
+
   })
   .catch( error => {
     console.log(error)
