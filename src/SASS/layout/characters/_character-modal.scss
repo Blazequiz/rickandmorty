@@ -1,0 +1,209 @@
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background-color: #0D171D;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-in-out;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #a1d737;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    color: #84b424;
+    transition: color 0.3s ease;
+  }
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.modal-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 3px solid #a1d737;
+  border-radius: 16px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.modal-info {
+  border: 2px solid #a1d737;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: transparent;
+}
+
+.modal-info-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.modal-info-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 117%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-info-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+
+  span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    color: #fafafa;
+  }
+}
+
+.modal-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-episodes-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 113%;
+  color: #a1d737;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.modal-episodes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.episode-item {
+  border: 2px solid #a1d737;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(161, 215, 55, 0.15);
+    border-color: #84b424;
+    transition: all 0.3s ease;
+  }
+}
+
+.episode-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 129%;
+  color: #a1d737;
+}
+
+.episode-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 117%;
+  color: rgba(255, 255, 255, 0.6);
+}

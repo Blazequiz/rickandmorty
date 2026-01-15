@@ -1,12 +1,20 @@
 import { getCharacter } from "../services/getCharacters.js";
+import { openModal } from "./modal.js";
 
 const somethingWentWrongImg = document.querySelector("#loadWentWrong")
 const chactersNameInput = document.querySelector("#characters-filter")
 const charactersList = document.querySelector("#charactersList")
 const loadMoreBtn = document.querySelector("#getMoreCharactersBtn-js");
 const loadingSpinner = document.querySelector("#loadingSpinner")
+
 export const pageObj = { value: 1 };
+
+// Храним персонажей в Map вместо data-атрибутов
+const charactersMap = new Map();
+let characterCounter = 0;
+
 loadMoreBtn.style.display = 'none';
+
 // current window width
 
 export function getLimitByScreen() {
@@ -36,6 +44,8 @@ async function onChangeGetCharacters(e) {
 
   somethingWentWrongImg.style.display = 'none';
   charactersList.innerHTML = ""
+  charactersMap.clear();
+  characterCounter = 0;
 
   getCharacter(value, status, gender, species, pageObj.value)
   .then(data => {
@@ -60,8 +70,11 @@ async function onChangeGetCharacters(e) {
 
 export function renderCharacters(characters) {
   const markup = characters.map( character => {
+    const characterId = `char-${characterCounter++}`;
+    charactersMap.set(characterId, character);
+    
     return `
-      <li class="characters-list-item">
+      <li class="characters-list-item" data-character-id="${characterId}" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <div class="img-container">
           <img src="${character.image}" alt="${character.name}">
         </div>
@@ -79,8 +92,20 @@ export function renderCharacters(characters) {
       </li>    
     `
   }).join("")
+
   charactersList.insertAdjacentHTML("beforeend", markup)
 }
+
+charactersList.addEventListener("click", (e) => {
+  const characterItem = e.target.closest(".characters-list-item");
+  if (characterItem) {
+    const characterId = characterItem.dataset.characterId;
+    const character = charactersMap.get(characterId);
+    if (character) {
+      openModal(character);
+    }
+  }
+});
 
 
 
