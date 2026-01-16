@@ -12,7 +12,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    font-size: 12px;
+    line-height: 117%;
+    gap: 8px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 129%;
+    }
   }
   &_name_input {
     border: 1.5px solid #111;
@@ -35,20 +41,19 @@
   }
   &_search-img {
     position: absolute;
-    padding-top: 34px;
-    left: 292px;
+    bottom: 15px;
+    right: 18px;
     @media screen and (min-width: 768px) {
-    padding-top: 36px;
-    left: 202px;
+    bottom: 17px;
     }
   }
 
-  &_arrow-img{
+  &_arrow-img {
     position: absolute;
-       padding-top: 34px;
-    left: 292px;
+    bottom: 20px;
+    right: 18px;
     @media screen and (min-width: 768px) {
-    left: 156px;
+    bottom: 16px;
     }
   }
   // &_select-wrapper {

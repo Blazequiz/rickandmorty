@@ -12,7 +12,7 @@ function init() {
     item.style.blockWidth = blockWidth + 'px';
     item.style.height = 'auto';
   });
-  console.log(width);
+  // console.log(width);
 }
 
 init();
