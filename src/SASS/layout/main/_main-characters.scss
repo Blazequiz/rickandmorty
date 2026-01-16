@@ -1,0 +1,108 @@
+.main-characters {
+    padding-bottom: 128px;
+    &-span {
+        border-radius: 44px;
+        background: var(--black);
+        color: var(--white);
+        width: 100px;
+        height: 44px;
+        padding: 5px 15px;
+        @media screen and (min-width: 768px) {
+            padding: 6px 16px;
+            width: 145px;
+            height: 56px;
+        }
+    }
+    &-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 114%;
+        color: var(--black);
+        margin-bottom: 40px;
+        @media screen and (min-width: 768px) {
+            font-weight: 600;
+            font-size: 44px;
+            line-height: 100%;
+            margin-bottom: 64px;
+        }
+    }
+    &-div {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @media screen and (min-width: 1200px) {
+            flex-direction: row;
+        }
+    }
+}
+.characters {
+    display: flex;
+    flex-direction: column;
+    width: 335px;
+    gap: 28px;
+    @media screen and (min-width: 768px) {
+        width: 704px;
+        gap: 32px;
+    };
+     @media screen and (min-width: 1200px) {
+        width: 648px;
+    };
+}
+.character {
+    &-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--black);
+        
+        @media screen and (min-width: 768px) {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 117%;
+            padding-bottom: 16px;
+        }
+    }
+    &-description {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 129%;
+        color: var(--black);
+        @media screen and (min-width: 768px) {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 113%;
+        }
+    }
+    &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: rgba(17, 17, 17, 0.2);
+        margin-top: 16px;
+    }
+}
+.active {
+    color: var(--green);
+}
+
+.box {
+    content: "";
+    display: block;
+    background-color: bisque;
+    border-radius: 100px;
+    width: 335px;
+    height: 335px;
+    @media screen and (min-width: 768px) {
+        width: 704px;
+        height: 704px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 500px;
+        height: 643px;
+    }
+}

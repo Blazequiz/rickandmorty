@@ -3,7 +3,7 @@
 .characters_hero {
   margin-bottom: 104px;
   padding-bottom: 80px;
-  background-color: #0D171D;
+  background-color: var(--black);
   border-radius: 0 0 70px 70px;  
     @media screen and (min-width: 768px) { 
       margin-bottom: 169px;
@@ -13,10 +13,11 @@
     @media screen and (min-width: 768px) { 
       display: flex;  
       align-items: center;
-      justify-content: space-between;
+      gap: 60px;
     }
-    @media screen and (min-width: 768px) { 
+    @media screen and (min-width: 1200px) { 
       justify-content: space-around;
+      gap: 0;
     }
   }
   &_img_box {
@@ -94,4 +95,3 @@
     }  
   }
 }
-
