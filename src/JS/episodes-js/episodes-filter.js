@@ -1,4 +1,4 @@
-const BASEURL = 'https://rickandmortyapi.com/api/episode';
+const BASE_URL = 'https://rickandmortyapi.com/api/episode';
 const name_input = document.querySelector('#name_input');
 const select = document.querySelector('#select');
 const visualList = document.querySelector('#episops_list');
@@ -9,20 +9,20 @@ const episodesMap = new Map();
 
 // fetch
 
-const options = {
-  method: 'GET',
-};
+// const options = {
+//   method: 'GET',
+// };
 
 const getAllEpisodes = () => {
-  return fetch(`${BASEURL}?episode=${episod}`, options).then(responce => {
+  return fetch(`${BASE_URL}?episode=${episod}`).then(responce => {
     return responce.json();
   });
 };
 
-getAllEpisodes().then(result => {
+getAllEpisodes().then(episodes => {
   // console.log(result)
   // console.log(result.results)
-  result.results.map(episod => {
+  episodes.results.map(episod => {
     console.log(episod);
     // console.log(episod.name)
   });
