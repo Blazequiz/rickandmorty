@@ -8,6 +8,7 @@
           type="text"
           class="filter-episodes_name_input"
           placeholder="Enter name"
+          id="name_input"
         />
         <img
           src="./img/icons/search.svg"
@@ -20,18 +21,17 @@
 
       <label class="filter-episodes_label"
         >Episode code
-        <select class="filter-episodes_field">
-          <option class="filter-episodes_option">All season</option>
-          <option class="filter-episodes_option">1 season</option>
-          <option class="filter-episodes_option">2 season</option>
-          <option class="filter-episodes_option">3 season</option>
-          <option class="filter-episodes_option">4 season</option>
-          <option class="filter-episodes_option">5 season</option>
+        <select class="filter-episodes_field" id="select">
+          <option class="filter-episodes_option" value="common">All season</option>
+          <option class="filter-episodes_option" value="S01">1 season</option>
+          <option class="filter-episodes_option" value="S02">2 season</option>
+          <option class="filter-episodes_option" value="S03">3 season</option>
+          <option class="filter-episodes_option" value="S04">4 season</option>
+          <option class="filter-episodes_option" value="S05">5 season</option>
         </select>
        <span class="filter-episodes_arrow-img"><img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow"></span>
       </label>
     </form>
-    <div class="filter-episodes_list"></div>
+    <div class="filter-episodes_list" id="episops_list"></div>
     <button class="filter-episodes_button">Load more</button>
-  </div>
 </section>
