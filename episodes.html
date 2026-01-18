@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <script type="module" crossorigin src="/rickandmorty/assets/episodes-bd6417d9.js"></script>
+    <script type="module" crossorigin src="/rickandmorty/assets/episodes-9cdec272.js"></script>
     <link rel="modulepreload" crossorigin href="/rickandmorty/assets/modulepreload-polyfill-3cfb730f.js">
-    <link rel="stylesheet" href="/rickandmorty/assets/main-f35c1666.css">
+    <link rel="stylesheet" href="/rickandmorty/assets/main-cbbf52d5.css">
   </head>
   <body>
     <!-- Loads the specified .html file -->
@@ -59,6 +59,7 @@
           type="text"
           class="filter-episodes_name_input"
           placeholder="Enter name"
+          id="name_input"
         />
         <img
           src="/rickandmorty/assets/search-d1809873.svg"
@@ -71,20 +72,19 @@
 
       <label class="filter-episodes_label"
         >Episode code
-        <select class="filter-episodes_field">
-          <option class="filter-episodes_option">All season</option>
-          <option class="filter-episodes_option">1 season</option>
-          <option class="filter-episodes_option">2 season</option>
-          <option class="filter-episodes_option">3 season</option>
-          <option class="filter-episodes_option">4 season</option>
-          <option class="filter-episodes_option">5 season</option>
+        <select class="filter-episodes_field" id="select">
+          <option class="filter-episodes_option" value="common">All season</option>
+          <option class="filter-episodes_option" value="S01">1 season</option>
+          <option class="filter-episodes_option" value="S02">2 season</option>
+          <option class="filter-episodes_option" value="S03">3 season</option>
+          <option class="filter-episodes_option" value="S04">4 season</option>
+          <option class="filter-episodes_option" value="S05">5 season</option>
         </select>
        <span class="filter-episodes_arrow-img"><img src="/rickandmorty/assets/dropdown_arrow-cdc726db.svg" alt="dropdown_arrow"></span>
       </label>
     </form>
-    <div class="filter-episodes_list"></div>
+    <div class="filter-episodes_list" id="episops_list"></div>
     <button class="filter-episodes_button">Load more</button>
-  </div>
 </section>
 
     <footer class="second-footer">
