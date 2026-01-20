@@ -1,5 +1,5 @@
 <section class="filter-episodes">
-  <div class="container">
+  <div class="container filter-episodes_container">
     <form class="filter-episodes_form">
       <label class="filter-episodes_label"
         >Name
@@ -22,16 +22,18 @@
       <label class="filter-episodes_label"
         >Episode code
         <select class="filter-episodes_field" id="select">
-          <option class="filter-episodes_option" value="common">All season</option>
+          <option class="filter-episodes_option" value="">All season</option>
           <option class="filter-episodes_option" value="S01">1 season</option>
           <option class="filter-episodes_option" value="S02">2 season</option>
           <option class="filter-episodes_option" value="S03">3 season</option>
           <option class="filter-episodes_option" value="S04">4 season</option>
           <option class="filter-episodes_option" value="S05">5 season</option>
         </select>
-       <span class="filter-episodes_arrow-img"><img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow"></span>
+       <img src="./img/icons/dropdown_arrow.svg" alt="dropdown_arrow" class="filter-episodes_arrow-img">
       </label>
     </form>
     <div class="filter-episodes_list" id="episops_list"></div>
     <button class="filter-episodes_button">Load more</button>
+
+    <!-- <span style="color: #a1d737; font-size: 34px; font-weight: 700;">Rick and Morty</span> --> 
 </section>

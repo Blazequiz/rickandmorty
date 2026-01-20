@@ -2,12 +2,15 @@
   background-color: var(--black);
   border-radius: 0 0 60px 60px;
   padding-bottom: 80px;
+  margin-bottom: 105px;
   @media screen and (min-width: 768px) {
     padding-bottom: 208px;
     border-radius: 0 0 100px 100px;
+     margin-bottom: 168px;
   }
   @media screen and (min-width: 1440px) {
     padding-bottom: 126px;
+        margin-bottom: 176px;
   }
 
   &_title {
