@@ -26,3 +26,8 @@ address {
 input:focus, button:focus, textarea:focus, select:focus {
   outline: none;
 }
+
+::before,
+::after {
+  box-sizing: border-box;
+}

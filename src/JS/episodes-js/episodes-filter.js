@@ -2,18 +2,24 @@ const BASE_URL = 'https://rickandmortyapi.com/api/episode';
 const name_input = document.querySelector('#name_input');
 const select = document.querySelector('#select');
 const visualList = document.querySelector('#episops_list');
-// import imageSeason1 from "../../img/episodes/imageSeason1.png"
 
 let episod = '';
 let episodsCounter = 0;
-const episodesMap = new Map();
+// const episodesMap = new Map();
 let name = '';
 
+const getLimitByScreen = () => {
+  const width = window.innerWidth;
+
+  if (width < 1200) return 10;
+  return 20;
+}
+
+let limit = getLimitByScreen();
 // fetch
 
-// const options = {
-//   method: 'GET',
-// };
+
+
 
 const getAllEpisodes = () => {
   return fetch(`${BASE_URL}?episode=${episod}&name=${name}`).then(responce => {
@@ -25,8 +31,9 @@ const getAllEpisodes = () => {
 const getEpisodes = (event) => {
 
   getAllEpisodes().then(episodes => {
-    console.log(episodes)
-renderEpisodes(episodes.results)
+    // console.log(episodes)
+    // console.log(episodes.results.slice(0, limit))
+renderEpisodes(episodes.results.slice(0, limit))
 });
 }
 getEpisodes()
@@ -37,8 +44,9 @@ const renderEpisodes = episodes => {
   const murkUp = episodes.map(episod => {
     const episodId = `episod-${episodsCounter++}`;
     // episodesMap.set(episodId, episod);
-
-    return `<div class="episod-card" data-episode-id="${episodId}">
+if(episod.episode.includes("S01")){
+  console.log(1)
+   return `<div class="episod-card episod-card-S01" data-episode-id="${episodId}">
       <h3 class="episod-card_title">${episod.name}</h3>
       <div class="episod-card_first-construction-div">
         <p class="episod-card_transperent-text">Season</p>
@@ -50,6 +58,89 @@ const renderEpisodes = episodes => {
       </div>
     </div>
   </div>`;
+} else if(episod.episode.includes("S02")){
+  console.log('else 2')
+   return `<div class="episod-card episod-card-S02" data-episode-id="${episodId}">
+      <h3 class="episod-card_title">${episod.name}</h3>
+      <div class="episod-card_first-construction-div">
+        <p class="episod-card_transperent-text">Season</p>
+        <p class="episod-card_transperent-text">Air date</p>
+      </div>
+      <div class="episod-card_second-construction-div">
+        <p class="episod-card_regular-text">2</p>
+        <p class="episod-card_regular-text">${episod.air_date}</p>
+      </div>
+    </div>
+  </div>`;
+} else if(episod.episode.includes("S03")){
+  console.log('else 3')
+   return `<div class="episod-card episod-card-S03" data-episode-id="${episodId}">
+      <h3 class="episod-card_title">${episod.name}</h3>
+      <div class="episod-card_first-construction-div">
+        <p class="episod-card_transperent-text">Season</p>
+        <p class="episod-card_transperent-text">Air date</p>
+      </div>
+      <div class="episod-card_second-construction-div">
+        <p class="episod-card_regular-text">3</p>
+        <p class="episod-card_regular-text">${episod.air_date}</p>
+      </div>
+    </div>
+  </div>`;
+} else if(episod.episode.includes("S04")){
+  console.log('else 4')
+   return `<div class="episod-card episod-card-S04" data-episode-id="${episodId}">
+      <h3 class="episod-card_title">${episod.name}</h3>
+      <div class="episod-card_first-construction-div">
+        <p class="episod-card_transperent-text">Season</p>
+        <p class="episod-card_transperent-text">Air date</p>
+      </div>
+      <div class="episod-card_second-construction-div">
+        <p class="episod-card_regular-text">4</p>
+        <p class="episod-card_regular-text">${episod.air_date}</p>
+      </div>
+    </div>
+  </div>`;
+} else if(episod.episode.includes("S05")){
+  console.log('else 5')
+   return `<div class="episod-card episod-card-S05" data-episode-id="${episodId}">
+      <h3 class="episod-card_title">${episod.name}</h3>
+      <div class="episod-card_first-construction-div">
+        <p class="episod-card_transperent-text">Season</p>
+        <p class="episod-card_transperent-text">Air date</p>
+      </div>
+      <div class="episod-card_second-construction-div">
+        <p class="episod-card_regular-text">5</p>
+        <p class="episod-card_regular-text">${episod.air_date}</p>
+      </div>
+    </div>
+  </div>`;
+} else if(episod.episode.includes("S06")){
+  console.log('else 6')
+   return `<div class="episod-card episod-card-S06" data-episode-id="${episodId}">
+      <h3 class="episod-card_title">${episod.name}</h3>
+      <div class="episod-card_first-construction-div">
+        <p class="episod-card_transperent-text">Season</p>
+        <p class="episod-card_transperent-text">Air date</p>
+      </div>
+      <div class="episod-card_second-construction-div">
+        <p class="episod-card_regular-text">6</p>
+        <p class="episod-card_regular-text">${episod.air_date}</p>
+      </div>
+    </div>
+  </div>`;
+}
+  //   return `<div class="episod-card" data-episode-id="${episodId}">
+  //     <h3 class="episod-card_title">${episod.name}</h3>
+  //     <div class="episod-card_first-construction-div">
+  //       <p class="episod-card_transperent-text">Season</p>
+  //       <p class="episod-card_transperent-text">Air date</p>
+  //     </div>
+  //     <div class="episod-card_second-construction-div">
+  //       <p class="episod-card_regular-text">1</p>
+  //       <p class="episod-card_regular-text">${episod.air_date}</p>
+  //     </div>
+  //   </div>
+  // </div>`;
   }).join('');
   visualList.insertAdjacentHTML("beforeend" , murkUp)
 };
