@@ -4,7 +4,11 @@ const select = document.querySelector('#select');
 const visualList = document.querySelector('#episops_list');
 const loadMoreBtn = document.querySelector('#load_more_episodes');
 // import ops1x from '../../img/together/oo';
-// import ops2x from '../img/scientist-optimization/blodgett-optimized.jpg';
+// import ops2x from '../img/scientist-optimization/blodgett-optimized.jpg'; 
+// <div class="ops_position-div">
+      // <img src="./img/together/oops_mobile_1x.png" alt="зелений портал з якого наполовину вилізли Рік і Морті" srcset="./img/together/oops_mobile_1x.png 284w, ./img/together/oops_mobile_2x.png 568w, ./img/together/oops_tablet_and_desktop_1x.png 388w, ./img/together/oops_tablet_and_desktop_2x.png 776w, 100vw" sizes="(min-width: 768px) 388px, (max-width: 768px) 284px, 100vw" class="ops_img">
+      // <p class="ops_paragraf">Oops! Try looking for something else...</p>
+      // </div>
 
 let episod = '';
 let episodsCounter = 0;
@@ -13,6 +17,10 @@ let name = '';
 let loadMoreLimit = 0;
 let loadMoreMultipliyer = 1;
 let page = 1;
+const somethingWentWrong = `<div class="ops_position-div">
+      <img src="./img/together/oops_mobile_1x.png" alt="зелений портал з якого наполовину вилізли Рік і Морті" srcset="./img/together/oops_mobile_1x.png 284w, ./img/together/oops_mobile_2x.png 568w, ./img/together/oops_tablet_and_desktop_1x.png 388w, ./img/together/oops_tablet_and_desktop_2x.png 776w, 100vw" sizes="(min-width: 768px) 388px, (max-width: 768px) 284px, 100vw" class="ops_img">
+      <p class="ops_paragraf">Oops! Try looking for something else...</p>
+      </div>`
 
 const getLimitByScreen = () => {
   const width = window.innerWidth;
@@ -45,6 +53,9 @@ const getEpisodes = event => {
       renderEpisodes(episodes.results.slice(0, limit));
     } catch {
       console.log('error');
+      visualList.innerHTML = somethingWentWrong;
+      loadMoreBtn.style.display = "none";
+      
     }
   });
 };
@@ -169,6 +180,7 @@ name_input.addEventListener('input', event => {
   limit = 50;
     page = 0;
   getEpisodes();
+    loadMoreBtn.style.display = "none";
 });
 
 loadMoreBtn.addEventListener('click', () => {
