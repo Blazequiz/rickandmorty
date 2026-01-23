@@ -3,6 +3,7 @@ const name_input = document.querySelector('#name_input');
 const select = document.querySelector('#select');
 const visualList = document.querySelector('#episops_list');
 const loadMoreBtn = document.querySelector('#load_more_episodes');
+import { openModal } from "./modal.js";
 // import ops1x from '../../img/together/oo';
 // import ops2x from '../img/scientist-optimization/blodgett-optimized.jpg'; 
 // <div class="ops_position-div">
@@ -12,7 +13,7 @@ const loadMoreBtn = document.querySelector('#load_more_episodes');
 
 let episod = '';
 let episodsCounter = 0;
-// const episodesMap = new Map();
+const episodesMap = new Map();
 let name = '';
 let loadMoreLimit = 0;
 let loadMoreMultipliyer = 1;
@@ -67,7 +68,7 @@ const renderEpisodes = episodes => {
   const murkUp = episodes
     .map(episod => {
       const episodId = `episod-${episodsCounter++}`;
-      // episodesMap.set(episodId, episod);
+      episodesMap.set(episodId, episod);
       if (episod.episode.includes('S01')) {
         // console.log(1);
         return `<div class="episod-card episod-card-S01" data-episode-id="${episodId}">
@@ -222,3 +223,19 @@ renderEpisodes(episodesss.results.slice(num1, num2));
   // console.log(loadMoreLimit);
   // console.log(loadMoreMultipliyer);
 });
+
+visualList.addEventListener("click" , (event) => {
+// console.log(event.currentTarget);
+// console.log(event.target);
+
+  const episodeItem = event.target.closest('.episod-card');
+  if (episodeItem) {
+    // Тут буде твоя дія для елемента дів
+    console.log('Клікнули на діву:', episodeItem);
+     const episoderId = episodeItem.dataset.episodeId;
+     console.log(episoderId);
+    const episode = episodesMap.get(episoderId);
+    openModal(episode)
+  }
+
+})
