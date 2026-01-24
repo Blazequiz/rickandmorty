@@ -1,5 +1,6 @@
 .slider {
     border-radius: 50px;
+    padding-bottom: 136px;
     background-color: var(--black);
     @media screen and (min-width: 768px) {
         border-radius: 80px;
@@ -20,11 +21,21 @@
         line-height: 109%;
         padding-top: 96px;
     }
+    &-text {
+        margin-bottom: 40px;
+        text-align: start;
+        @media screen and (min-width: 768px) {
+            margin-bottom: 64px;
+        }
+    }
 }
 &-img {
     overflow: hidden;
     padding-bottom: 136px;
     padding-top: 40px;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
     @media screen and (min-width: 768px) {
         padding-top: 64px;
         padding-bottom: 170px;
@@ -33,9 +44,10 @@
         display: flex;
         gap: 24px;
         padding-bottom: 20px;
+        transition: transform 0.2s ease;
         @media screen and (min-width: 768px) {
             padding-bottom: 32px;
-    }
+        }
     }
 }
 }
@@ -50,10 +62,11 @@
 .box2 {
     content: "";
     // display: block;
-    background-color: bisque;
+    // background-color: bisque;
     border-radius: 18px;
     width: 200px;
     height: 220px;
+    overflow: hidden;
     
     border: 3px solid var(--green);
     @media screen and (min-width: 768px) {
@@ -75,4 +88,23 @@
     border-radius: 1000px;
     width: 113px;
     height: 42px;
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    padding: 0;
+}
+
+
+.slider-img,
+.slider-img * {
+            cursor: grab;
+            transition: none;
+}
+
+.slider-img-list.dragging,
+.slider-img-list.dragging * {
+  cursor: grabbing;
 }

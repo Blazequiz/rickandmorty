@@ -58,6 +58,8 @@
         font-size: 18px;
         line-height: 133%;
         color: var(--black);
+        cursor: pointer;
+        transition: color 0.3s;
         
         @media screen and (min-width: 768px) {
             font-weight: 600;
@@ -93,7 +95,7 @@
 .box {
     content: "";
     display: block;
-    background-color: bisque;
+    background-color: var(--green);
     border-radius: 100px;
     width: 335px;
     height: 335px;
@@ -105,4 +107,10 @@
         width: 500px;
         height: 643px;
     }
+}
+
+.main-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

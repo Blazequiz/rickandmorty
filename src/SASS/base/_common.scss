@@ -18,3 +18,7 @@ input:focus {outline : none; border: none;}
 button {
   cursor: pointer;
 }
+
+html {
+    scroll-behavior: smooth;
+}
