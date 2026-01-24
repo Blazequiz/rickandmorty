@@ -4,6 +4,7 @@ const select = document.querySelector('#select');
 const visualList = document.querySelector('#episops_list');
 const loadMoreBtn = document.querySelector('#load_more_episodes');
 import { openModal } from "./modal.js";
+import debounce from 'debounce';
 // import ops1x from '../../img/together/oo';
 // import ops2x from '../img/scientist-optimization/blodgett-optimized.jpg'; 
 // <div class="ops_position-div">
@@ -175,14 +176,15 @@ select.addEventListener('change', event => {
   getEpisodes();
 });
 
-name_input.addEventListener('input', event => {
-  name = event.currentTarget.value;
+name_input.addEventListener('input', debounce((event) => {
+  // name = event.currentTarget.value; not working becose of debounse
+  name = name_input.value;
   visualList.innerHTML = '';
   limit = 50;
     page = 0;
   getEpisodes();
     loadMoreBtn.style.display = "none";
-});
+}, 1000));
 
 loadMoreBtn.addEventListener('click', () => {
   getAllEpisodes().then(episodes => {
