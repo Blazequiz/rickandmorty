@@ -1,11 +1,25 @@
 .filter-episodes {
+  margin-bottom: 80px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 128px;
+  }
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 1200px) {
+      width: auto;
+    }
+  }
   &_form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 40px;
     @media screen and (min-width: 768px) {
       flex-direction: row;
       justify-content: center;
+      margin-bottom: 64px;
     }
   }
   &_label {
@@ -21,12 +35,14 @@
     }
   }
   &_name_input {
+    width: 335px;
     border: 1.5px solid #111;
     border-radius: 100px;
     padding: 14px 24px;
     background-color: var(--light-green);
     @media screen and (min-width: 768px) {
       padding: 16px 23px;
+      width: 234px;
     }
   }
 
@@ -39,12 +55,18 @@
       line-height: 113%;
     }
   }
+
+  // &_name_input:focus .filter-episodes_search-img{
+  //   width: 22px;
+  //   height: 22px;
+  // }
+
   &_search-img {
     position: absolute;
     bottom: 15px;
     right: 18px;
     @media screen and (min-width: 768px) {
-    bottom: 17px;
+      bottom: 17px;
     }
   }
 
@@ -53,13 +75,9 @@
     bottom: 20px;
     right: 18px;
     @media screen and (min-width: 768px) {
-    bottom: 16px;
+      bottom: 16px;
     }
   }
-  // &_select-wrapper {
-  //   padding-top: 8px;
-  //   position: relative;
-  // }
   &_field {
     border: 1.5px solid #111;
     border-radius: 100px;
@@ -67,7 +85,7 @@
     transition: 0.4s;
 
     @media screen and (min-width: 768px) {
-      padding: 16px 24px;
+      // padding: 16px 24px;
       width: 190px;
       height: 50px;
     }
@@ -89,9 +107,27 @@
     background-color: white;
   }
 
+  &_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 64px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
+    @media screen and (min-width: 1200px) {
+      column-count: 4;
+      gap: 16px;
+    }
+  }
+
   &_button {
     border-radius: 1000px;
-    padding: 10px 20px;
+    border: none;
     width: 107px;
     height: 36px;
     background-color: var(--green);
@@ -99,10 +135,464 @@
     font-size: 12px;
     line-height: 133%;
     color: var(--black);
-    @media screen and (min-width: 480px) {
-      padding: 12px 24px;
+    transition: all 0.25s ease-in 0s;
+    @media screen and (min-width: 768px) {
+      // padding: 12px 24px;
       width: 126px;
       height: 42px;
+    }
+  }
+  &_button:hover {
+    // background-color: var(--black);
+    // color: var(--green);
+    // transition: all .25s ease-in 0s
+    animation: corupt-hover 1s linear forwards;
+  }
+}
+
+// width: 315px; height: 230px; бо падінг чомусь 20 пікселів є
+
+.episod-card {
+  position: relative;
+  border: 2px solid var(--green);
+  border-radius: 18px;
+  width: 335px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s linear;
+  @media screen and (min-width: 1200px) {
+    width: 285px;
+    height: 200px;
+  }
+  &:hover {
+    background-color: rgb(54, 54, 54);
+    transition: all 0.5s linear;
+  }
+  &:hover .episod-card_title {
+    font-size: 18px;
+    transition: all 0.5s linear;
+  }
+  &_title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 113%;
+    color: var(--green);
+    transition: all 0.5s linear;
+  }
+  &_transperent-text {
+    font-size: 12px;
+    line-height: 117%;
+    color: var(--transperent);
+  }
+  &_regular-text {
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--white);
+  }
+  &_first-construction-div {
+    position: absolute;
+    bottom: 42px;
+    left: 20px;
+    display: flex;
+    gap: 18px;
+  }
+  &_second-construction-div {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 55px;
+  }
+}
+
+.ops_position-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ops_img {
+  width: 284px;
+  height: 262px;
+  @media screen and (min-width: 768px) {
+    width: 388px;
+    height: 358px;
+  }
+}
+.ops_paragraf {
+  font-size: 16px;
+  line-height: 113%;
+  letter-spacing: 0.02em;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+  }
+}
+
+.episod-card-S01 {
+  background-color: var(--black);
+  background-image: url('/public/first_season.png');
+}
+
+.episod-card-S02 {
+  background-color: var(--black);
+  background-image: url('/public/second_season.png');
+}
+
+.episod-card-S03 {
+  background-color: var(--black);
+  background-image: url('/public/third_season.png');
+}
+
+.episod-card-S04 {
+  background-color: var(--black);
+  background-image: url('/public/fourth_season.png');
+}
+
+.episod-card-S05 {
+  background-color: var(--black);
+  background-image: url('/public/fifth_season.png');
+}
+
+.episod-card-S06 {
+  background-color: var(--black);
+  background-image: url('/public/sixth_season.png');
+}
+
+@keyframes corupt-hover {
+  0% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 96%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+
+  5% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 90%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+
+  10% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 84%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+
+  15% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 78%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+
+  20% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 72%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  25% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 65%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  30% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 59%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  35% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 53%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  40% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 47%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  45% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 41%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 35%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  55% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 29%,
+      rgba(13, 23, 29, 1) 40%
+    );
+  }
+  65% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 23%,
+      rgba(13, 23, 29, 1) 35%
+    );
+  }
+  70% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 17%,
+      rgba(13, 23, 29, 1) 30%
+    );
+  }
+  75% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 11%,
+      rgba(13, 23, 29, 1) 25%
+    );
+  }
+  80% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 5%,
+      rgba(13, 23, 29, 1) 20%
+    );
+  }
+  85% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 0%,
+      rgba(13, 23, 29, 1) 10%
+    );
+  }
+  90% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 0%,
+      rgba(13, 23, 29, 1) 5%
+    );
+  }
+  95% {
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 0%,
+      rgba(13, 23, 29, 1) 0%
+    );
+  }
+  100% {
+    color: var(--light-green);
+    background: radial-gradient(
+      circle,
+      rgba(161, 215, 55, 1) 0%,
+      rgba(13, 23, 29, 1) 0%
+    );
+  }
+}
+
+.episodes-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.episode_modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  width: 335px;
+  height: 420px;
+  background-color: var(--black);
+  @media screen and (min-width: 768px) {
+    width: 674px;
+    height: 370px;
+    border-radius: 18px;
+  }
+
+  &_close_btn {
+    top: 10px;
+    right: 12px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    transition: transform 1s ease-in-out;
+    @media screen and (min-width: 768px) {
+      top: 12px;
+      right: 6px;
+    }
+  }
+
+  &_close_btn:hover {
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
+  }
+
+  &_svg {
+    width: 20px;
+    height: 20px;
+    @media screen and (min-width: 768px) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  &_green_line {
+    position: relative;
+    border: 2px solid var(--green);
+    border-radius: 18px;
+    width: 295px;
+    height: 340px;
+    @media screen and (min-width: 768px) {
+      width: 609px;
+      height: 305px;
+    }
+  }
+
+  &_title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+    color: var(--white);
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 117%;
+    }
+  }
+
+  &_first_position-div {
+    position: absolute;
+    top: 58px;
+    left: 20px;
+    display: flex;
+    gap: 30px;
+  }
+
+  &_transperent_text {
+    font-size: 12px;
+    line-height: 117%;
+    color: var(--transperent);
+  }
+
+  &_second_position-div {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    display: flex;
+    gap: 14px;
+  }
+
+  &_regular_text {
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--white);
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 113%;
+    }
+  }
+
+  &_second_title {
+    position: absolute;
+    left: 20px;
+    top: 138px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+    color: var(--white);
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 117%;
+      top: 118px;
+    }
+  }
+
+  &_transperent_text_special {
+    position: absolute;
+    left: 20px;
+    bottom: 150px;
+    font-size: 12px;
+    line-height: 117%;
+    color: var(--transperent);
+    @media screen and (min-width: 768px) {
+    bottom: 130px;
+    }
+  }
+
+  &_charactes_list {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-count: 2;
+    height: 114px;
+    gap: 14px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      gap: 22px;
+    }
+  }
+
+  &_character_img {
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    @media screen and (min-width: 768px) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &_name {
+    max-width: 60px;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--white);
+  }
+
+  &_construction-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    @media screen and (min-width: 768px) {
+      gap: 10px;
     }
   }
 }
