@@ -3,10 +3,12 @@ import { getLimitByScreen } from "./loadCharacters.js";
 import { renderCharacters } from "./loadCharacters.js";
 import { pageObj } from "./loadCharacters.js";
 import { openModal } from "./modal.js";
+import "../../SASS/layout/characters/_characters-filter.scss";
 
 const loadMoreBtn = document.querySelector("#getMoreCharactersBtn-js");
 const loadingSpinner = document.querySelector("#loadingSpinner")
 const somethingWentWrongImg = document.querySelector("#loadWentWrong")
+const charactersList = document.querySelector("#charactersList")
 console.log(loadMoreBtn);
 
 
@@ -30,6 +32,9 @@ loadMoreBtn.addEventListener("click", async () => {
   getCharacter(value, status, gender, species, pageObj.value)
   .then(data => {
     console.log(data)
+    if (!data || !data.results) {
+      throw new Error("No results received from API");
+    }
     const first12Elements = data.results.slice(0, limit)
     console.log(first12Elements);
     renderCharacters(first12Elements) // the name of first12Elements will be renamed because the manage of elements depends on screen size
@@ -39,8 +44,9 @@ loadMoreBtn.addEventListener("click", async () => {
   })
   .catch( error => {
     console.log(error)
-    somethingWentWrongImg.style.display = 'block';
+    somethingWentWrongImg.style.display = 'flex';
     loadingSpinner.classList.replace("d-block", "d-none");
+    charactersList.innerHTML = "";
+    loadMoreBtn.style.display = 'none';
   })
-
 });
