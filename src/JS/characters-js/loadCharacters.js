@@ -10,9 +10,11 @@ const selects = document.querySelectorAll(".SelectValues");
 
 export const pageObj = { value: 1 };
 
-// Храним персонажей в Map вместо data-атрибутов
 const charactersMap = new Map();
 let characterCounter = 0;
+
+let cachedCharacters = [];
+let cachedIndex = 0;
 
 loadMoreBtn.style.display = 'none';
 
@@ -24,6 +26,37 @@ export function getLimitByScreen() {
   if (width < 768) return 8;
   if (width < 1024) return 10;
   return 20;
+}
+
+export function showNextBatch() {
+  const limit = getLimitByScreen();
+  const nextBatch = cachedCharacters.slice(cachedIndex, cachedIndex + limit);
+  
+  if (nextBatch.length === 0) {
+    return false;
+  }
+
+  renderCharacters(nextBatch);
+  cachedIndex += limit;
+
+  if (cachedIndex < cachedCharacters.length) {
+    loadMoreBtn.style.display = 'block';
+  } else {
+    loadMoreBtn.style.display = 'block';
+  }
+
+  return true;
+}
+
+export function initCache(characters) {
+  cachedCharacters = characters;
+  cachedIndex = 0;
+  
+  if (characters.length > 0) {
+    loadMoreBtn.style.display = 'block';
+  } else {
+    loadMoreBtn.style.display = 'none';
+  }
 }
 
 
@@ -39,9 +72,6 @@ async function onChangeGetCharacters(e) {
     gender = '';
   }
   console.log(value, status,  gender, species);
-  const limit = getLimitByScreen();
-
-  console.log(limit);
 
   somethingWentWrongImg.style.display = 'none';
   charactersList.innerHTML = ""
@@ -51,10 +81,13 @@ async function onChangeGetCharacters(e) {
   getCharacter(value, status, gender, species, pageObj.value)
   .then(data => {
     console.log(data)
-    const first12Elements = data.results.slice(0, limit)
-    console.log(first12Elements);
-    renderCharacters(first12Elements)
-    loadMoreBtn.style.display = 'block';
+    if (!data || !data.results) {
+      throw new Error("No results received from API");
+    }
+    
+    initCache(data.results);
+    showNextBatch();
+    
     loadingSpinner.classList.replace("d-block", "d-none");
   })
   .catch( error => {
@@ -66,8 +99,6 @@ async function onChangeGetCharacters(e) {
 
   // chactersNameInput.value = '';
 }
-
-// render function 
 
 export function renderCharacters(characters) {
   const markup = characters.map( character => {
@@ -102,10 +133,9 @@ async function loadInitialCharacters() {
   somethingWentWrongImg.style.display = 'none';
   
   try {
-    const limit = getLimitByScreen();
     const data = await getCharacter('', '', '', '', 1);
-    renderCharacters(data.results.slice(0, limit));
-    loadMoreBtn.style.display = 'block';
+    initCache(data.results);
+    showNextBatch();
   } catch (error) {
     console.log(error);
     somethingWentWrongImg.style.display = 'flex';
