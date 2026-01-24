@@ -1,14 +1,14 @@
-.div3 {
-    content: "";
-    // display: block;
-    background-color: bisque;
-    width: 149px;
-    height: 107px;
-    @media screen and (min-width: 768px) {
-        width: 225px;
-        height: 135px;
-    }
-}
+// .div3 {
+//     content: "";
+//     // display: block;
+//     background-color: bisque;
+//     width: 149px;
+//     height: 107px;
+//     @media screen and (min-width: 768px) {
+//         width: 225px;
+//         height: 135px;
+//     }
+// }
 
 .footerLinks {
     display: flex;
@@ -23,15 +23,19 @@
 
 .logoFooter {
     // padding-top: 64px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .navFooter {
     // padding-left: 42px;
     @media screen and (min-width: 768px) {
-        padding-left: 96px;
+        margin-left: 96px;
     }
     @media screen and (min-width: 1200px) {
-        padding-left: 331px;
+        margin-left: 331px;
     }
     &-list {
         font-family: var(--font-family);
@@ -59,17 +63,29 @@
 }
 
 .footerSocialImg {
-    border: 1px solid var(--black);
+    width: 28px;
+    height: 28px;
+}
+
+.footerSocialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(17, 17, 17, 0.2);
     width: 56px;
     height: 56px;
+    border-radius: 12px;
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
 }
 .socialLinks {
-    padding-left: 0px;
+    margin-left: 0px;
     @media screen and (min-width: 768px) {
-        padding-left: 78px;
+        margin-left: 78px;
     }
     @media screen and (min-width: 1200px) {
-        padding-left: 78px;
+        margin-left: 252px;
     }
     &-list {
         display: flex;
@@ -96,5 +112,59 @@
     }
     @media screen and (min-width: 1200px) {
         padding-top: 100px;
+    }
+};
+
+.footerTags {
+    position: relative;
+    display: flex;
+};
+
+.tagFooter {
+    position: absolute;
+}
+
+.footerRotate1 {
+    width: 100px;
+    border-radius: 25px;
+    padding: 14px 21px;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    background-color: var(--black);
+    left: -120px;
+    @media screen and (min-width: 768px) {
+        left: -40px;
+    }
+};
+
+.footerRotate2 {
+    border-radius: 25px;
+    padding: 14px 24px;
+    background-color: var(--light-green);
+    color: var(--black);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 105%;
+    letter-spacing: 0.02em;
+    transform: rotate(30deg);
+    left: -50px;
+    top: -40px;
+    @media screen and (min-width: 768px) {
+        left: 30px;
+        top: -40px;
+    }
+};
+
+.footerImg {
+    position: absolute;
+    bottom: 0px;
+    left: -105px; // 15
+    @media screen and (min-width: 768px) {
+        left: -35px;
     }
 }
