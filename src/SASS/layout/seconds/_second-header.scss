@@ -1,20 +1,20 @@
 .second_header {
   padding-bottom: 62px;
   background-color: var(--black);
+      padding-top: 20px;
   @media screen and (min-width: 768px) {
     padding-bottom: 142px;
+    padding-top: 24px;
   }
     @media screen and (min-width: 1200px) {
     padding-bottom: 100px;
   }
   &_img {
-    width: 120px;
-    height: 45px;
-    padding-top: 20px;
+    width: 140px;
+    height: 40px;
     @media screen and (min-width: 768px) {
       width: 192px;
       height: 50px;
-      padding-top: 24px;
     }
   }
 }
