@@ -6,6 +6,7 @@ const chactersNameInput = document.querySelector("#characters-filter")
 const charactersList = document.querySelector("#charactersList")
 const loadMoreBtn = document.querySelector("#getMoreCharactersBtn-js");
 const loadingSpinner = document.querySelector("#loadingSpinner")
+const selects = document.querySelectorAll(".SelectValues");
 
 export const pageObj = { value: 1 };
 
@@ -63,7 +64,7 @@ async function onChangeGetCharacters(e) {
     loadingSpinner.classList.replace("d-block", "d-none");
   })
 
-  chactersNameInput.value = '';
+  // chactersNameInput.value = '';
 }
 
 // render function 
@@ -96,6 +97,24 @@ export function renderCharacters(characters) {
   charactersList.insertAdjacentHTML("beforeend", markup)
 }
 
+async function loadInitialCharacters() {
+  loadingSpinner.classList.replace("d-none", "d-block");
+  somethingWentWrongImg.style.display = 'none';
+  
+  try {
+    const limit = getLimitByScreen();
+    const data = await getCharacter('', '', '', '', 1);
+    renderCharacters(data.results.slice(0, limit));
+    loadMoreBtn.style.display = 'block';
+  } catch (error) {
+    console.log(error);
+    somethingWentWrongImg.style.display = 'flex';
+    loadMoreBtn.style.display = 'none';
+  } finally {
+    loadingSpinner.classList.replace("d-block", "d-none");
+  }
+}
+
 charactersList.addEventListener("click", (e) => {
   const characterItem = e.target.closest(".characters-list-item");
   if (characterItem) {
@@ -110,3 +129,8 @@ charactersList.addEventListener("click", (e) => {
 
 
 chactersNameInput.addEventListener("change", onChangeGetCharacters)
+selects.forEach( select => {
+  select.addEventListener("change", onChangeGetCharacters)
+})
+
+loadInitialCharacters();
