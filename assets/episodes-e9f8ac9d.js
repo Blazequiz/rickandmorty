@@ -1,4 +1,4 @@
-import"./main-368a7401.js";const $="/rickandmorty/assets/text_logo_gl-92500735.png",p=document.querySelector("#header_text_logo_img"),w="./img/together/text_logo.png";p.addEventListener("mouseover",()=>{p.src=$});p.addEventListener("mouseout",()=>{p.src=w});function k(s){const t=document.createElement("div");t.className="episodes-modal",t.innerHTML=`<div class="episode_modal">
+import"./main-0e503feb.js";const $="/rickandmorty/assets/text_logo_gl-92500735.png",p=document.querySelector("#header_text_logo_img"),w="./img/together/text_logo.png";p.addEventListener("mouseover",()=>{p.src=$});p.addEventListener("mouseout",()=>{p.src=w});function k(s){const t=document.createElement("div");t.className="episodes-modal",t.innerHTML=`<div class="episode_modal">
       <button class="episode_modal_close_btn"><svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="episode_modal_svg">
         <path d="M16.5 5.5L5.5 16.5" stroke="#A1D737" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M5.5 5.5L16.5 16.5" stroke="#A1D737" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
