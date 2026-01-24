@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" href="/rickandmorty/assets/main-ae23ddfa.css">
+    <script type="module" crossorigin src="/rickandmorty/assets/index-81c35645.js"></script>
+    <link rel="modulepreload" crossorigin href="/rickandmorty/assets/main-368a7401.js">
+    <link rel="stylesheet" href="/rickandmorty/assets/main-034b8c19.css">
   </head>
   <body>
     <!-- Loads the specified .html file -->
@@ -31,7 +33,7 @@
                 <img src="../../img/main/hero/main_hero_tablet_and_descktop_gl_text_1x.png" alt="Rick and Morty" class="hero-div-image-textImg" srcset="/rickandmorty/assets/main_hero_mobile_gl_text_1x-10c7ea6f.png 324w, /rickandmorty/assets/main_hero_mobile_gl_text_2x-7f3b7a18.png 648w, /rickandmorty/assets/main_hero_tablet_and_descktop_gl_text_1x-4090a2be.png 460w, /rickandmorty/assets/main_hero_tablet_and_descktop_gl_text_2x-8707e0c5.png 920w" sizes="(min-width: 768px) 460px, (max-width: 768px) 324px, 100vw">
             </div>
     </div>
-    <button class="scrollToBottom-btn"></button>
+    <a href="#footer" class="scrollToBottom-btn"><img src="./img/icons/dropdownVector.svg" alt="" class="dropDownSvg"></a>
     
     
     <div class="hero-inscriptions">
@@ -53,80 +55,117 @@
 </section>
 
     <section class="main-characters">
-<div class="container">
+  <div class="container">
     <h2 class="main-characters-title"><span class="main-characters-span">Main</span> characters</h2>
 
-<div class="main-characters-div">
-  <div class="image-box">
-    <div class="box"></div>
-    <img src="" alt="">
-  </div>
+    <div class="main-characters-div">
+      <div class="image-box">
+        <div class="box">
+          <picture class="main-picture">
+            <source id="source-mobile" media="(max-width: 768px)"
+              srcset="/rickandmorty/assets/rick_mobile_1x-2a32e272.png 1x, /rickandmorty/assets/rick_mobile_2x-51369de3.png 2x">
+            <source id="source-tablet" media="(max-width: 1200px)"
+              srcset="/rickandmorty/assets/rick_tablet_1x-df8b20a4.png 1x, /rickandmorty/assets/rick_tablet_2x-64ba9cf0.png 2x">
+            <source id="source-desktop"
+              srcset="/rickandmorty/assets/rick_descktop_1x-c72ebf4a.png 1x, /rickandmorty/assets/rick_descktop_2x-c7c50a6a.png 2x">
+            <img src="/rickandmorty/assets/rick_descktop_1x-c72ebf4a.png" alt="rick sanchez" class="main-picture-img">
+          </picture>
+        </div>
+      </div>
 
-  <div class="characters">
-    <div class="character">
-      <h3 class="character-title active">Rick Sanchez</h3>
-      <p class="character-description">Rick Sanchez is a brilliant but deeply troubled scientist and one of the main characters in the animated TV show Rick and Morty.</p>
-    </div>
+      <div class="characters">
+        <div class="character">
+          <h3 class="character-title active"
+            data-mob="./img/main/main_characters/mobile/rick_mobile_1x.png 1x, ./img/main/main_characters/mobile/rick_mobile_2x.png 2x"
+            data-tab="./img/main/main_characters/tablet_and_mobile/rick_tablet_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/rick_tablet_2x.png 2x"
+            data-desk="./img/main/main_characters/tablet_and_mobile/rick_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/rick_descktop_2x.png 2x">
+            Rick Sanchez</h3>
+          <p class="character-description">Rick Sanchez is a brilliant but deeply troubled scientist and one of the main
+            characters in the animated TV show Rick and Morty.</p>
+        </div>
 
-    <div class="character">
-      <h3 class="character-title">Morty Smith</h3>
-      <p class="character-description">Morty Smith is the other main character in the animated TV show Rick and Morty, and Rick's grandson.</p>
-    </div>
+        <div class="character">
+          <h3 class="character-title"
+            data-mob="./img/main/main_characters/mobile/morty_mobile_1x.png 1x, ./img/main/main_characters/mobile/morty_mobile_2x.png 2x"
+            data-tab="./img/main/main_characters/tablet_and_mobile/morty_tablet_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/morty_tablet_2x.png 2x"
+            data-desk="./img/main/main_characters/tablet_and_mobile/morty_descktop_1x.png 1x,./img/main/main_characters/tablet_and_mobile/morty_desktop_2x.png 2x">
+            Morty Smith</h3>
+          <p class="character-description">Morty Smith is the other main character in the animated TV show Rick and
+            Morty, and Rick's grandson.</p>
+        </div>
 
-    <div class="character">
-      <h3 class="character-title">Summer Smith</h3>
-      <p class="character-description">Summer Smith is Morty's older sister and one of the main characters in Rick and Morty.</p>
-    </div>
+        <div class="character">
+          <h3 class="character-title"
+            data-mob="./img/main/main_characters/mobile/sammer_mobile_1x.png 1x, ./img/main/main_characters/mobile/sammer_mobile_2x.png 2x"
+            data-tab="./img/main/main_characters/tablet_and_mobile/sammer_tablet_and_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/sammer_tablet_and_descktop_2x.png 2x"
+            data-desk="./img/main/main_characters/tablet_and_mobile/sammer_tablet_and_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/sammer_tablet_and_descktop_2x.png 2x">
+            Summer Smith</h3>
+          <p class="character-description">Summer Smith is Morty's older sister and one of the main characters in Rick
+            and Morty.</p>
+        </div>
 
-    <div class="character">
-      <h3 class="character-title">Beth Smith</h3>
-      <p class="character-description">Beth is a horse surgeon, and, as Rick's daughter, she is intelligent if sometimes cold.</p>
-    </div>
+        <div class="character">
+          <h3 class="character-title"
+            data-mob="./img/main/main_characters/mobile/bett_mobile_1x.png 1x, ./img/main/main_characters/mobile/bett_mobile_2x.png 2x"
+            data-tab="./img/main/main_characters/tablet_and_mobile/bett_tablet_and_descktop_1.png 1x, ./img/main/main_characters/tablet_and_mobile/bett_tablet_and_descktop_2x.png 2x"
+            data-desk="./img/main/main_characters/tablet_and_mobile/bett_tablet_and_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/bett_tablet_and_descktop_2x.png 2x">
+            Beth Smith</h3>
+          <p class="character-description">Beth is a horse surgeon, and, as Rick's daughter, she is intelligent if
+            sometimes cold.</p>
+        </div>
 
-    <div class="character">
-      <h3 class="character-title">Jerry Smith</h3>
-      <p class="character-description">Jerry is the husband of Beth Smith, the father of Summer Smith and Morty Smith.</p>
+        <div class="character">
+          <h3 class="character-title"
+            data-mob="./img/main/main_characters/mobile/jerry_mobile_1x.png 1x, ./img/main/main_characters/mobile/jerry_mobile_2x.png 2x"
+            data-tab="./img/main/main_characters/tablet_and_mobile/jerry_tablet_and_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/jerry_tablet_and_descktop_2x.png 2x"
+            data-desk="./img/main/main_characters/tablet_and_mobile/jerry_tablet_and_descktop_1x.png 1x, ./img/main/main_characters/tablet_and_mobile/jerry_tablet_and_descktop_2x.png 2x">
+            Jerry Smith</h3>
+          <p class="character-description">Jerry is the husband of Beth Smith, the father of Summer Smith and Morty
+            Smith.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
     </ul>
-</div>
+  </div>
 </section>
-
     <section class="slider">
     <div class="container">
     <div class="slider-title">
-        <p>Ready to <span class="sliderMain-span">explore</span> the crazy <br> world of Rick and Morty?</p>
+        <p class="slider-title-text">Ready to <span class="sliderMain-span">explore</span> the crazy <br> world of Rick and Morty?</p>
     </div>
     <div class="slider-img">
         <ul class="slider-img-list">
             <li>
-                <img src="/rickandmorty/assets/slider_first_1x-741875d9.png" alt="" srcset="/rickandmorty/assets/slider_first_1x-741875d9.png 278w, /rickandmorty/assets/slider_first_2x-5e805739.png 556w" sizes="278px, 100vw" width="278px"> <div class="box2"></div>
+                 <div class="box2"><img src="/rickandmorty/assets/slider_first_1x-741875d9.png" alt="" srcset="/rickandmorty/assets/slider_first_1x-741875d9.png 278w, /rickandmorty/assets/slider_first_2x-5e805739.png 556w" sizes="278px, 100vw" width="278px" class="slider-img"></div>
             </li>
             <li>
-                <img src="/rickandmorty/assets/slider_second_1x-4839908b.png" alt="" srcset="/rickandmorty/assets/slider_second_1x-4839908b.png 278w, /rickandmorty/assets/slider_second_2x-9fdc54c1.png 556w" sizes="278px, 100vw" width="278px"> <div class="box2"></div>
+                 <div class="box2"><img src="/rickandmorty/assets/slider_second_1x-4839908b.png" alt="" srcset="/rickandmorty/assets/slider_second_1x-4839908b.png 278w, /rickandmorty/assets/slider_second_2x-9fdc54c1.png 556w" sizes="278px, 100vw" width="278px" class="slider-img"></div>
             </li>
             <li>
-                <img src="/rickandmorty/assets/slider_third_1x-495b2031.png" alt="" srcset="/rickandmorty/assets/slider_third_1x-495b2031.png 278w, /rickandmorty/assets/slider_third_2x-f1eebba6.png 556w" sizes="278px, 100vw" width="278px"> <div class="box2"></div>
+                 <div class="box2"><img src="/rickandmorty/assets/slider_third_1x-495b2031.png" alt="" srcset="/rickandmorty/assets/slider_third_1x-495b2031.png 278w, /rickandmorty/assets/slider_third_2x-f1eebba6.png 556w" sizes="278px, 100vw" width="278px" class="slider-img"></div>
             </li>
             <li>
-                <img src="/rickandmorty/assets/slider_forth_1x-00e96618.png" alt="" srcset="/rickandmorty/assets/slider_forth_1x-00e96618.png 278w, /rickandmorty/assets/slider_forth_2x-ea121b33.png 556w" sizes="278px, 100vw" width="278px"> <div class="box2"></div>
+                 <div class="box2"><img src="/rickandmorty/assets/slider_forth_1x-00e96618.png" alt="" srcset="/rickandmorty/assets/slider_forth_1x-00e96618.png 278w, /rickandmorty/assets/slider_forth_2x-ea121b33.png 556w" sizes="278px, 100vw" width="278px" class="slider-img"></div>
             </li>
             <li>
-                <img src="/rickandmorty/assets/slider_fifth_1x-82998f36.png" alt="" srcset="/rickandmorty/assets/slider_fifth_1x-82998f36.png 278w, /rickandmorty/assets/slider_fifth_2x-4cd8058e.png 556w" sizes="278px, 100vw" width="278px"> <div class="box2"></div>
+                 <div class="box2"><img src="/rickandmorty/assets/slider_fifth_1x-82998f36.png" alt="" srcset="/rickandmorty/assets/slider_fifth_1x-82998f36.png 278w, /rickandmorty/assets/slider_fifth_2x-4cd8058e.png 556w" sizes="278px, 100vw" width="278px" class="slider-img"></div>
             </li>
         </ul>
-        <a href="" class="slider-button">Episodes</a>
+        
     </div>
-    
+    <a href="./episodes.html" class="slider-button">Episodes</a>
 </div>
 </section>
 
-    <footer class="footerMain">
+    <footer class="footerMain" id="footer">
   <div class="container">
     <div class="footerLinks">
       <div class="logoFooter">
-        <img src="/rickandmorty/assets/rick_and_morty_tablet-desctop_1x-dd087da1.png" alt="" srcset="/rickandmorty/assets/rick_and_morty_mobile_1x-163631d5.png 72w, /rickandmorty/assets/rick_and_morty_mobile_2x-08d3b657.png 144w, /rickandmorty/assets/rick_and_morty_tablet-desctop_1x-dd087da1.png 98w, /rickandmorty/assets/rick_and_morty_tablet-desctop_2x-138fa39c.png 196w" sizes="(min-width: 768px) 98px, (max-width: 768px) 72px, 100vw" width="72px"/>
+        <img src="/rickandmorty/assets/rick_and_morty_tablet-desctop_1x-dd087da1.png" alt="" class="footerImg" srcset="/rickandmorty/assets/rick_and_morty_mobile_1x-163631d5.png 72w, /rickandmorty/assets/rick_and_morty_mobile_2x-08d3b657.png 144w, /rickandmorty/assets/rick_and_morty_tablet-desctop_1x-dd087da1.png 98w, /rickandmorty/assets/rick_and_morty_tablet-desctop_2x-138fa39c.png 196w" sizes="(min-width: 768px) 98px, (max-width: 768px) 72px, 100vw" width="72px"/>
+        <div class="footerTags">
+          <span class="footerRotate1 tagFooter">Rick and</span>
+          <span class="footerRotate2 tagFooter">Morty</span>
+        </div>
         <div class="div3"></div>
       </div>
       <div class="footerClickable">
@@ -143,13 +182,13 @@
         <div class="socialLinks">
           <ul class="socialLinks-list">
             <li>
-              <img src="/rickandmorty/assets/facebook-947dfed8.svg" alt="facebook icon" class="footerSocialImg" style="fill: black;"/>
+              <a href="" class="footerSocialLinks"><img src="/rickandmorty/assets/facebook_black-918bb01a.svg" alt="facebook icon" class="footerSocialImg" style="fill: black;"/></a>
             </li>
             <li>
-              <img src="/rickandmorty/assets/twitter-25b4a821.svg" alt="twitter icon" class="footerSocialImg" />
+              <a href="" class="footerSocialLinks"><img src="/rickandmorty/assets/twitter_black-8b7380f1.svg" alt="twitter icon" class="footerSocialImg" /></a>
             </li>
             <li>
-              <img src="/rickandmorty/assets/instagram-45ecee00.svg" alt="instagram icon" class="footerSocialImg" />
+              <a href="" class="footerSocialLinks"><img src="/rickandmorty/assets/instagram_black-d1211828.svg" alt="instagram icon" class="footerSocialImg" /></a>
             </li>
           </ul>
         </div>
@@ -163,5 +202,7 @@
 </footer>
 
 
+    
+    
   </body>
 </html>
