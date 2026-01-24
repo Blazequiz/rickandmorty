@@ -1,4 +1,5 @@
 .filter-episodes {
+  position: relative;
   margin-bottom: 80px;
   @media screen and (min-width: 768px) {
     margin-bottom: 128px;
@@ -75,7 +76,7 @@
     bottom: 20px;
     right: 18px;
     @media screen and (min-width: 768px) {
-      bottom: 16px;
+      bottom: 20px;
     }
   }
   &_field {
@@ -83,6 +84,7 @@
     border-radius: 100px;
     padding: 15px 24px;
     transition: 0.4s;
+    appearance: none;
 
     @media screen and (min-width: 768px) {
       // padding: 16px 24px;
