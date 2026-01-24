@@ -1,4 +1,4 @@
-import"./main-0e503feb.js";const b="https://rickandmortyapi.com/api/character";async function g(e,s,n,o,a){try{const t=await fetch(`${b}?name=${e}&page=${a}&gender=${n}&status=${s}&species=${o}`);return console.log(t),await t.json()}catch(t){console.log(t)}}function w(e){const s=document.createElement("div");s.className="custom-modal",s.innerHTML=`
+import"./main-e729fe9b.js";const b="https://rickandmortyapi.com/api/character";async function g(e,s,n,o,a){try{const t=await fetch(`${b}?name=${e}&page=${a}&gender=${n}&status=${s}&species=${o}`);return console.log(t),await t.json()}catch(t){console.log(t)}}function w(e){const s=document.createElement("div");s.className="custom-modal",s.innerHTML=`
     <div class="modal-content">
       <button class="modal-close">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
