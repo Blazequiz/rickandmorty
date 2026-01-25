@@ -1,3 +1,3 @@
-import "./characters-main.js";
+import "./character-main.js";
 import "./main-slider.js";
 
